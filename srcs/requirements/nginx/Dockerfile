@@ -2,4 +2,6 @@ FROM debian:stable
 
 RUN apt-get update && apt-get install -y nginx
 
-CMD nginx -t
+COPY conf/nginx.conf /etc/nginx/conf.d/nginx.conf
+
+CMD ["nginx", "-g", "daemon off;"]
