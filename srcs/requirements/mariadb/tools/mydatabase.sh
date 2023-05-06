@@ -1,10 +1,13 @@
 #!/bin/bash
 
 service mysql start
+echo "CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE ;" > mydb.sql
+echo "CREATE USER IF NOT EXISTS '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD' ;" >> mydb.sql
+echo "GRANT ALL PRIVILEGES ON $MYSQL_DATABASE.* TO '$MYSQL_USER'@'%' ;" >> mydb.sql
+echo "FLUSH PRIVILEGES;" >> mydb.sql
 
-mysql> CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE ;
-mysql> CREATE USER IF NOT EXISTS $MYSQL_USER@% IDENTIFIED BY $MYSQL_PASSWORD ;
-mysql> GRANT ALL PRIVILEGES ON $MYSQL_DATABASE.* TO $MYSQL_USER@% ;
-mysql> FLUSH PRIVILEGES;
+mysql < mydb.sql
+
+service mysql stop
 
 mysqld
