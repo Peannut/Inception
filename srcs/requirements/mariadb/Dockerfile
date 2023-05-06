@@ -1,6 +1,10 @@
 FROM debian:stable
 
-RUN apt-get update && apt-get install -y mariadb-server
+RUN apt-get update \
+	&& apt-get install -y mariadb-server
 
+COPY ./tools/mydatabase.sh /
 
-CMD ["bash"]
+RUN chmod +x ./mydatabase.sh
+
+CMD [ "./mydatabase.sh"]
