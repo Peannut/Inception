@@ -1,11 +1,12 @@
 FROM debian:stable
 
-# RUN apt-get update && \
-# 	 apt-get install -y 
+RUN apt-get update && \
+	 apt-get install -y curl php-fpm
 
-RUN 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
     chmod +x wp-cli.phar && \
     mv wp-cli.phar /usr/local/bin/wp
 
-CMD ["bash"]
+# RUN wp --info
+
+CMD ["sleep","infinity"]
