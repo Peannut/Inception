@@ -10,4 +10,4 @@ mysql < mydb.sql
 
 service mysql stop
 
-mysqld
+mysqld --bind-address=0.0.0.0
