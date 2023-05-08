@@ -43,13 +43,13 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/zoukaddo/data/wordpress_data
+      device: /Users/zoukaddo/data/wordpress_data
       o: bind
   mariadb_data:
     driver: local
     driver_opts:
       type: none
-      device: /home/zoukaddo/data/mariadb_data
+      device: /Users/zoukaddo/data/mariadb_data
       o: bind
 
 networks:
