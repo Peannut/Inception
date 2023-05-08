@@ -38,18 +38,18 @@ services:
     networks:
       - inception_network
 
-  volumes:
-    wordpress_data:
+volumes:
+  wordpress_data:
     driver: local
     driver_opts:
       type: none
-      device: /home/nelidris/data/wordpress_data
+      device: /home/zoukaddo/data/wordpress_data
       o: bind
   mariadb_data:
     driver: local
     driver_opts:
       type: none
-      device: /home/nelidris/data/mariadb_data
+      device: /home/zoukaddo/data/mariadb_data
       o: bind
 
 networks:
