@@ -1,7 +1,7 @@
 FROM debian:stable
 
 RUN apt-get update && \
-	 apt-get install -y curl php-fpm php-mysql
+	 apt-get install -y curl php-fpm php-mysql mariadb-client && mkdir -p /var/www/html/
 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
     chmod +x wp-cli.phar && \
