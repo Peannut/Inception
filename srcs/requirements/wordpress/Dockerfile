@@ -1,7 +1,9 @@
-FROM debian:stable
+FROM debian:buster
 
 RUN apt-get update && \
-	 apt-get install -y curl php-fpm php-mysql mariadb-client && mkdir -p /var/www/html/
+	 apt-get install -y curl php-fpm php-mysql mariadb-client sendmail && \
+     mkdir -p /var/www/html/ && \
+     mkdir -p /run/php/
 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
     chmod +x wp-cli.phar && \
