@@ -9,4 +9,5 @@ RUN openssl req -newkey rsa:2048 -nodes -keyout /etc/ssl/private/certificate.key
 
 COPY conf/nginx.conf /etc/nginx/conf.d/nginx.conf
 
+
 CMD ["nginx", "-g", "daemon off;"]

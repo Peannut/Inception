@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd /var/www/html
 wp core download --path=/var/www/html --allow-root
 wp config create --path=/var/www/html --dbname=$MYSQL_DATABASE --dbuser=$MYSQL_USER --dbpass=$MYSQL_PASSWORD --dbhost=$MDB_HOST --allow-root
 wp core install --path=/var/www/html --url=$WPR_URL --title=$WPR_TITLE --admin_user=$WPR_ADMIN_USER --admin_password=$WPR_ADMIN_PASS --admin_email=$WPR_ADMIN_EMAIL --allow-root
