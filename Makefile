@@ -6,7 +6,7 @@ up:
 	sudo mkdir -p /Users/zoukaddo/data/wordpress_data
 	docker compose -f ./srcs/docker-compose.yml up
 down:
-	docker compose -f ./srcs/docker-compose.yml down
+	docker-compose -f ./srcs/docker-compose.yml down
 down-all:
 	sudo rm -rf /Users/zoukaddo/data/mariadb_data
 	sudo rm -rf /Users/zoukaddo/data/wordpress_data
